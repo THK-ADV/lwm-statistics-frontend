@@ -1,0 +1,19 @@
+<h2 md-dialog-title>Neuer Resource Eintrag</h2>
+<div class="clearfix"></div>
+
+<form [formGroup]="resourceEntryForm" #resForm (submit)="submit()">
+  <md-form-field>
+    <input formControlName="label" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Label">
+    <md-error>This field is required</md-error>
+    <md-hint>Label dieses Eintrags</md-hint>
+  </md-form-field>
+  <br>
+  <md-form-field>
+    <input formControlName="id" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Id">
+    <md-error>This field is required</md-error>
+    <md-hint>Id dieses Eintrags</md-hint>
+  </md-form-field>
+  <div md-dialog-actions style="margin-top: 32px">
+    <button type="submit" md-raised-button color="accent" [disabled]="!resForm.checkValidity()"><i class="fa fa-save"></i> Speichern</button>
+  </div>
+</form>

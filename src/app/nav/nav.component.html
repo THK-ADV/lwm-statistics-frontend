@@ -1,0 +1,22 @@
+<md-sidenav #sidenav>
+  <div class="nav-header">
+    <button md-icon-button (click)="sidenav.close()" class="pull-right"><i class="fa fa-bars"></i></button>
+    <h3>LWM Statistics</h3>
+  </div>
+  <div class="clearfix"></div>
+  <md-nav-list *ngIf="navItems">
+    <md-list-item *ngFor="let navItem of navItems" [routerLink]="navItem.route" (click)="sidenav.close()">
+      <a md-line>{{navItem.label}}</a>
+    </md-list-item>
+    <md-list-item *ngIf="ressources" [mdMenuTriggerFor]="menu">
+      <a md-line>Ressourcen</a>
+    </md-list-item>
+  </md-nav-list>
+
+  <md-menu #menu="mdMenu" [xPosition]="'before'">
+    <button *ngFor="let res of ressources" md-menu-item [routerLink]="['/resource', res.id]" (click)="sidenav.close()">{{res.label}}</button>
+  </md-menu>
+
+</md-sidenav>
+
+<button md-icon-button (click)="sidenav.open()"><i class="fa fa-bars"></i></button>

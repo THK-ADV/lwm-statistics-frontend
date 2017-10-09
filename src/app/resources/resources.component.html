@@ -1,0 +1,12 @@
+<div class="container">
+    <button md-fab style="position: absolute; right: 32px; bottom: 32px" (click)="addResourceClicked()"><i class="fa fa-plus"></i></button>
+    <h2>Resources</h2>
+    <div class="clearfix"></div>
+
+
+    <div *ngFor="let resource of resources" style="padding: 8px">
+
+        <app-resource-list-item [resource]="resource"></app-resource-list-item>
+
+    </div>
+</div>

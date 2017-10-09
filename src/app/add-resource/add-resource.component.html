@@ -1,0 +1,27 @@
+<h2 md-dialog-title>Neue Resource</h2>
+<div class="clearfix"></div>
+
+<form [formGroup]="resourceForm" #resForm (submit)="submit()">
+    <md-form-field>
+        <input formControlName="label" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Label">
+        <md-error>This field is required</md-error>
+        <md-hint>Label dieser Resource</md-hint>
+    </md-form-field>
+    <md-select formControlName="method" placeholder="Methode" [value]="getMethods()[0]">
+        <md-option *ngFor="let method of getMethods()" [value]="method">{{ method }}</md-option>
+    </md-select>
+    <br>
+    <md-form-field>
+        <input formControlName="filter" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Filter">
+        <md-error>This field is required</md-error>
+        <md-hint>Bsp.: /api2/course/</md-hint>
+    </md-form-field>
+    <md-form-field>
+        <input formControlName="detail" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Detail">
+        <md-error>This field is required</md-error>
+        <md-hint>Detail der Resource. Bsp.: labworks => /api2/course/:id/labworks/:id</md-hint>
+    </md-form-field>
+    <div md-dialog-actions style="margin-top: 32px">
+        <button type="submit" md-raised-button color="accent" [disabled]="!resForm.checkValidity()"><i class="fa fa-save"></i> Speichern</button>
+    </div>
+</form>

@@ -1,0 +1,44 @@
+<div *ngIf="resourceValues && resource" class="container">
+    <h1>{{resource.label}}</h1>
+    <div>
+        <md-form-field>
+            <input mdInput [mdDatepicker]="fromPicker" placeholder="Von" [value]="startDate" (dateChange)="onStartChange($event)">
+            <md-datepicker-toggle mdSuffix [for]="fromPicker"></md-datepicker-toggle>
+            <md-datepicker #fromPicker startView="year"></md-datepicker>
+        </md-form-field>
+        <md-form-field>
+            <input mdInput [mdDatepicker]="toPicker" placeholder="Bis" [value]="endDate" (dateChange)="onEndChange($event)">
+            <md-datepicker-toggle mdSuffix [for]="toPicker"></md-datepicker-toggle>
+            <md-datepicker #toPicker startView="year"></md-datepicker>
+        </md-form-field>
+    </div>
+    <md-tab-group *ngIf="lineChartDataArray">
+        <md-tab *ngFor="let entry of resource.entries; let i = index" [label]="entry.label">
+            <div class="col-md-12">
+                <canvas baseChart width="400" height="400"
+                        #chart
+                        style="display: block; height: 500px"
+                        [datasets]="lineChartDataArray[i]"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+            </div>
+            <div class="col-md-12" style="margin-bottom: 10px">
+                <table class="table table-responsive table-condensed">
+                    <tr>
+                        <th></th>
+                        <th *ngFor="let label of lineChartLabels">{{label}}</th>
+                    </tr>
+                    <tr *ngFor="let d of lineChartDataArray[i]">
+                        <th>{{d.label}}</th>
+                        <td *ngFor="let d of d.data">{{d}}</td>
+                    </tr>
+                </table>
+            </div>
+        </md-tab>
+    </md-tab-group>
+
+</div>

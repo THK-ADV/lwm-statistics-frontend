@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MdDialogRef} from '@angular/material';
+import {MatDialogRef} from '@angular/material';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ResourceService} from '../services/resource.service';
 
@@ -25,7 +25,7 @@ export class AddResourceComponent implements OnInit {
         method: new FormControl('', Validators.required),
     });
 
-    constructor(public dialogRef: MdDialogRef<AddResourceComponent>, private resourceService: ResourceService) {
+    constructor(public dialogRef: MatDialogRef<AddResourceComponent>, private resourceService: ResourceService) {
     }
 
     ngOnInit() {

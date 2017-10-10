@@ -1,19 +1,19 @@
-<h2 md-dialog-title>Neuer Resource Eintrag</h2>
+<h2 mat-dialog-title>Neuer Resource Eintrag</h2>
 <div class="clearfix"></div>
 
 <form [formGroup]="resourceEntryForm" #resForm (submit)="submit()">
-  <md-form-field>
-    <input formControlName="label" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Label">
-    <md-error>This field is required</md-error>
-    <md-hint>Label dieses Eintrags</md-hint>
-  </md-form-field>
+  <mat-form-field>
+    <input formControlName="label" matInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Label">
+    <mat-error>This field is required</mat-error>
+    <mat-hint>Label dieses Eintrags</mat-hint>
+  </mat-form-field>
   <br>
-  <md-form-field>
-    <input formControlName="id" mdInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Id">
-    <md-error>This field is required</md-error>
-    <md-hint>Id dieses Eintrags</md-hint>
-  </md-form-field>
-  <div md-dialog-actions style="margin-top: 32px">
-    <button type="submit" md-raised-button color="accent" [disabled]="!resForm.checkValidity()"><i class="fa fa-save"></i> Speichern</button>
+  <mat-form-field>
+    <input formControlName="id" matInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Id">
+    <mat-error>This field is required</mat-error>
+    <mat-hint>Id dieses Eintrags</mat-hint>
+  </mat-form-field>
+  <div mat-dialog-actions style="margin-top: 32px">
+    <button type="submit" mat-raised-button color="accent" [disabled]="!resForm.checkValidity()"><i class="fa fa-save"></i> Speichern</button>
   </div>
 </form>

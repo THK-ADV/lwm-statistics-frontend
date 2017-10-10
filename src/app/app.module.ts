@@ -5,15 +5,6 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MdButtonModule, MdCardModule, MdDatepickerModule, MdDialogModule, MdExpansionModule, MdFormFieldModule, MdIconBase,
-  MdIconModule,
-  MdInputModule,
-  MdListModule, MdMenuModule, MdNativeDateModule, MdSelectModule,
-  MdSidenavModule, MdSliderModule,
-  MdTableModule,
-  MdTabsModule
-} from '@angular/material';
 import {router} from './app.router';
 import {StatisticService} from './services/statistic.service';
 import {HttpModule} from '@angular/http';
@@ -27,6 +18,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AddResourceEntryComponent } from './add-resource-entry/add-resource-entry.component';
 import { AddDetailEntryComponent } from './add-detail-entry/add-detail-entry.component';
 import { ResourceListItemComponent } from './resource-list-item/resource-list-item.component';
+import {
+    MatButtonModule, MatCardModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatFormFieldModule,
+    MatIconModule,
+    MatInputModule, MatListModule,
+    MatMenuModule, MatNativeDateModule, MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatTableModule, MatTabsModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -45,23 +45,23 @@ import { ResourceListItemComponent } from './resource-list-item/resource-list-it
       HttpModule,
     BrowserAnimationsModule,
       router,
-    MdDialogModule,
-      MdSidenavModule,
-      MdButtonModule,
-      MdListModule,
-      MdSliderModule,
-      MdTableModule,
-      MdTabsModule,
-      MdIconModule,
-      MdCardModule,
-      MdMenuModule,
-      MdIconModule,
-      MdFormFieldModule,
-      MdInputModule,
-      MdSelectModule,
-      MdExpansionModule,
-      MdDatepickerModule,
-      MdNativeDateModule,
+    MatDialogModule,
+      MatSidenavModule,
+      MatButtonModule,
+      MatListModule,
+      MatSliderModule,
+      MatTableModule,
+      MatTabsModule,
+      MatIconModule,
+      MatCardModule,
+      MatMenuModule,
+      MatIconModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatSelectModule,
+      MatExpansionModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
       ChartsModule,
     ReactiveFormsModule,
   ],

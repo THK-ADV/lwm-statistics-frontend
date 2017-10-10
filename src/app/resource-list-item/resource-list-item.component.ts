@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Resource} from '../models/Resource';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {AddResourceEntryComponent} from '../add-resource-entry/add-resource-entry.component';
 import {AddDetailEntryComponent} from '../add-detail-entry/add-detail-entry.component';
-import {ResourceService} from "../services/resource.service";
+import {ResourceService} from '../services/resource.service';
 
 @Component({
   selector: 'app-resource-list-item',
@@ -15,7 +15,7 @@ export class ResourceListItemComponent implements OnInit {
   @Input()
   resource: Resource;
 
-  constructor(private dialog: MdDialog, private resourceService: ResourceService) { }
+  constructor(private dialog: MatDialog, private resourceService: ResourceService) { }
 
   ngOnInit() {
     this.resourceService.getDetails(this.resource.id)

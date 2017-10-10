@@ -1,70 +1,70 @@
-<md-expansion-panel *ngIf="resource">
-  <md-expansion-panel-header>
-    <md-panel-title style="width: 15%">
+<mat-expansion-panel *ngIf="resource">
+  <mat-expansion-panel-header>
+    <mat-panel-title style="width: 15%">
       {{resource.label}}
-    </md-panel-title>
-    <md-panel-description class="text-center" style="width: 55%">
-      <!--<div class="col-lg-4 text-left" md-line>
+    </mat-panel-title>
+    <mat-panel-description class="text-center" style="width: 55%">
+      <!--<div class="col-lg-4 text-left" mat-line>
           <span style="font-size: smaller">{{resource.id}}</span>
       </div>-->
-      <div class="col-lg-2 text-left" md-line>
+      <div class="col-lg-2 text-left" mat-line>
         <strong>Method:</strong><br> {{resource.method}}
       </div>
-      <div class="col-lg-3 text-left" md-line>
+      <div class="col-lg-3 text-left" mat-line>
         <strong>Filter:</strong><br> {{resource.filter}}
       </div>
-      <div class="col-lg-3 text-left" md-line>
+      <div class="col-lg-3 text-left" mat-line>
         <strong>Detail:</strong><br> {{resource.detail}}
       </div>
-    </md-panel-description>
+    </mat-panel-description>
     <div class="text-right" style="width: 30%">
-      <button md-icon-button (click)="$event.stopPropagation();" [routerLink]="['/resource',resource.id]">
-        <md-icon>show_chart</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();" [routerLink]="['/resource',resource.id]">
+        <mat-icon>show_chart</mat-icon>
       </button>
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon>edit</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon>edit</mat-icon>
       </button>
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon>delete</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon>delete</mat-icon>
       </button>
     </div>
-  </md-expansion-panel-header>
+  </mat-expansion-panel-header>
 
-  <md-selection-list>
+  <mat-selection-list>
     <strong>Resource Entries</strong>
-    <button md-icon-button (click)="addResourceEntryClicked()"><i class="fa fa-plus"></i></button>
-    <md-list-item md-line *ngFor="let resourceEntry of resource.entries">
-      <h3 md-line> {{resourceEntry.label}} </h3>
-      <p md-line>
+    <button mat-icon-button (click)="addResourceEntryClicked()"><i class="fa fa-plus"></i></button>
+    <mat-list-item mat-line *ngFor="let resourceEntry of resource.entries">
+      <h3 mat-line> {{resourceEntry.label}} </h3>
+      <p mat-line>
         <span> {{resourceEntry.entryId}} </span>
       </p>
       <span class="spacer"></span>
 
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon class="md-24">edit</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon class="mat-24">edit</mat-icon>
       </button>
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon class="md-24">delete</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon class="mat-24">delete</mat-icon>
       </button>
-    </md-list-item>
-  </md-selection-list>
+    </mat-list-item>
+  </mat-selection-list>
 
-  <md-list>
+  <mat-list>
     <strong>Detail Entries</strong>
-    <button md-icon-button (click)="addDetailEntryClicked()"><i class="fa fa-plus"></i></button>
-    <md-list-item md-line *ngFor="let detailEntry of resource.detailEntries">
-      <h3 md-line> {{detailEntry.label}} </h3>
-      <p md-line>
+    <button mat-icon-button (click)="addDetailEntryClicked()"><i class="fa fa-plus"></i></button>
+    <mat-list-item mat-line *ngFor="let detailEntry of resource.detailEntries">
+      <h3 mat-line> {{detailEntry.label}} </h3>
+      <p mat-line>
         <span> {{detailEntry.entryId}} </span>
       </p>
       <div></div>
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon class="md-24">edit</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon class="mat-24">edit</mat-icon>
       </button>
-      <button md-icon-button (click)="$event.stopPropagation();">
-        <md-icon class="md-24">delete</md-icon>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon class="mat-24">delete</mat-icon>
       </button>
-    </md-list-item>
-  </md-list>
+    </mat-list-item>
+  </mat-list>
 
-</md-expansion-panel>
+</mat-expansion-panel>

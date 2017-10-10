@@ -1,20 +1,20 @@
 <div *ngIf="resourceValues && resource" class="container">
     <h1>{{resource.label}}</h1>
     <div>
-        <md-form-field>
-            <input mdInput [mdDatepicker]="fromPicker" placeholder="Von" [value]="startDate" (dateChange)="onStartChange($event)">
-            <md-datepicker-toggle mdSuffix [for]="fromPicker"></md-datepicker-toggle>
-            <md-datepicker #fromPicker startView="year"></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-            <input mdInput [mdDatepicker]="toPicker" placeholder="Bis" [value]="endDate" (dateChange)="onEndChange($event)">
-            <md-datepicker-toggle mdSuffix [for]="toPicker"></md-datepicker-toggle>
-            <md-datepicker #toPicker startView="year"></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="fromPicker" placeholder="Von" [value]="startDate" (dateChange)="onStartChange($event)">
+            <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+            <mat-datepicker #fromPicker startView="year"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="toPicker" placeholder="Bis" [value]="endDate" (dateChange)="onEndChange($event)">
+            <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+            <mat-datepicker #toPicker startView="year"></mat-datepicker>
+        </mat-form-field>
     </div>
-    <md-tab-group *ngIf="lineChartDataArray">
-        <md-tab *ngFor="let entry of resource.entries; let i = index" [label]="entry.label">
-            <div class="col-md-12">
+    <mat-tab-group *ngIf="lineChartDataArray">
+        <mat-tab *ngFor="let entry of resource.entries; let i = index" [label]="entry.label">
+            <div class="col-mat-12">
                 <canvas baseChart width="400" height="400"
                         #chart
                         style="display: block; height: 500px"
@@ -26,7 +26,7 @@
                         (chartHover)="chartHovered($event)"
                         (chartClick)="chartClicked($event)"></canvas>
             </div>
-            <div class="col-md-12" style="margin-bottom: 10px">
+            <div class="col-mat-12" style="margin-bottom: 10px">
                 <table class="table table-responsive table-condensed">
                     <tr>
                         <th></th>
@@ -38,7 +38,7 @@
                     </tr>
                 </table>
             </div>
-        </md-tab>
-    </md-tab-group>
+        </mat-tab>
+    </mat-tab-group>
 
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Resource} from '../models/Resource';
 import {ResourceService} from '../services/resource.service';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MatDialog, MatDialogRef} from '@angular/material';
 import {AddResourceComponent} from '../add-resource/add-resource.component';
 import {AddResourceEntryComponent} from '../add-resource-entry/add-resource-entry.component';
 import {AddDetailEntryComponent} from '../add-detail-entry/add-detail-entry.component';
@@ -15,7 +15,7 @@ export class ResourcesComponent implements OnInit {
 
   resources: Resource[];
 
-  constructor(private resourceService: ResourceService, private dialog: MdDialog) { }
+  constructor(private resourceService: ResourceService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.resourceService.all().subscribe(resources => {

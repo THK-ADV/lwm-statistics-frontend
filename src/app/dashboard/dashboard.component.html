@@ -1,17 +1,17 @@
 <div class="container">
   <h1>Dashboard</h1>
 
-  <md-card *ngIf="statistics" class="col-lg-6" [style.backgroundColor]="'#FF5722'">
-    <md-card-header>
-      <md-card-title>
+  <mat-card *ngIf="statistics" class="col-lg-6" [style.backgroundColor]="'#FF5722'">
+    <mat-card-header>
+      <mat-card-title>
         Aktionen
-      </md-card-title>
-      <md-card-subtitle>
+      </mat-card-title>
+      <mat-card-subtitle>
         Alle getätigte Aktionen
-      </md-card-subtitle>
-    </md-card-header>
-    <md-card-content>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
       <h1>{{statistics.length}}</h1>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

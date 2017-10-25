@@ -3,14 +3,12 @@
 
 <form [formGroup]="resourceEntryForm" #resForm (submit)="submit()">
   <mat-form-field>
-    <input formControlName="label" matInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Label">
-    <mat-error>This field is required</mat-error>
+    <input formControlName="label" matInput required placeholder="Label">
     <mat-hint>Label dieses Eintrags</mat-hint>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input formControlName="id" matInput required [errorStateMatcher]="myErrorStateMatcher" placeholder="Id">
-    <mat-error>This field is required</mat-error>
+    <input formControlName="id" matInput required  placeholder="Id">
     <mat-hint>Id dieses Eintrags</mat-hint>
   </mat-form-field>
   <div mat-dialog-actions style="margin-top: 32px">

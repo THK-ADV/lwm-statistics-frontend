@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {AddResourceEntryComponent} from '../add-resource-entry/add-resource-entry.component';
+import {AddValueDialogComponent} from '../add-resource-entry/add-value-dialog.component';
 import {ResourceService} from '../services/resource.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class AddDetailEntryComponent implements OnInit {
   });
 
 
-  constructor(private dialogRef: MatDialogRef<AddResourceEntryComponent>,
+  constructor(private dialogRef: MatDialogRef<AddValueDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: number, private resourceService: ResourceService) { }
 
   ngOnInit() {

@@ -10,10 +10,10 @@ export const backendRoutes = {
         'byResource': '/statistics',
     },
     'resources' : {
-        'all': '/resources',
-        'byId': '/resources',
-        'save': '/resources',
-        'details': '/resources/details',
+        'all': '/patterns',
+        'byId': '/patterns',
+        'save': '/patterns',
+        'details': '/patterns/details',
         'entries': {
             'save': '/resourceEntry'
         },

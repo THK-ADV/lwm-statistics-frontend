@@ -3,6 +3,7 @@ import {NavItem} from '../models/NavItem';
 import {NavService} from '../services/nav.service';
 import {Resource} from '../models/Resource';
 import {ResourceService} from '../services/resource.service';
+import {Pattern} from "../models/Pattern";
 
 
 @Component({
@@ -13,9 +14,9 @@ import {ResourceService} from '../services/resource.service';
 export class NavComponent implements OnInit {
 
   navItems: NavItem[];
-  ressources: Resource[];
+  ressources: Pattern[];
 
-  constructor(private navService: NavService, private ressourceService: ResourceService) { }
+  constructor(private navService: NavService, private resourceService: ResourceService) { }
 
   ngOnInit() {
     this.navService.getNavItems().subscribe(
@@ -23,7 +24,7 @@ export class NavComponent implements OnInit {
         error => console.log(error)
     );
 
-    this.ressourceService.all().subscribe(
+    this.resourceService.all().subscribe(
         success => this.ressources = success,
         error => console.log(error)
     );

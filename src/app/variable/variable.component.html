@@ -1,0 +1,4 @@
+
+<h4><span class="label" [style.background]="color">{{variable.name}}</span></h4>
+<app-variable-values [values]="values" (afterDelete)="afterDeleteValue($event)"></app-variable-values>
+<button mat-button (click)="addValueClicked()" style="width: 100%">Neues Value</button>

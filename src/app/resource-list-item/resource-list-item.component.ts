@@ -1,9 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Resource} from '../models/Resource';
 import {MatDialog} from '@angular/material';
-import {AddResourceEntryComponent} from '../add-resource-entry/add-resource-entry.component';
+import {AddValueDialogComponent} from '../add-resource-entry/add-value-dialog.component';
 import {AddDetailEntryComponent} from '../add-detail-entry/add-detail-entry.component';
 import {ResourceService} from '../services/resource.service';
+import {Pattern} from "../models/Pattern";
+import {Variable} from "../models/Variable";
+import {VariableService} from "../services/variable.service";
+import {validate} from "codelyzer/walkerFactory/walkerFn";
+import {variable} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'app-resource-list-item',
@@ -13,31 +18,33 @@ import {ResourceService} from '../services/resource.service';
 export class ResourceListItemComponent implements OnInit {
 
   @Input()
-  resource: Resource;
+  pattern: Pattern;
 
-  constructor(private dialog: MatDialog, private resourceService: ResourceService) { }
+  variables: Variable[] = [];
+
+  constructor(private dialog: MatDialog, private resourceService: ResourceService, private variableService: VariableService) { }
 
   ngOnInit() {
-    this.resourceService.getDetails(this.resource.id)
-        .subscribe(result => {
-          console.log(result);
-          this.resource.detailEntries = result.detailEntries ? result.detailEntries : [];
-          this.resource.entries = result.entries ? result.entries : [];
-        });
+    this.variableService.byPattern(this.pattern.id)
+        .subscribe( data => this.variables = data);
   }
 
   addResourceEntryClicked() {
-    const dialogRef = this.dialog.open(AddResourceEntryComponent, { data: this.resource.id });
+    /*
+    const dialogRef = this.dialog.open(AddValueDialogComponent, { data: this.pattern.id });
     dialogRef.afterClosed().subscribe(res => {
-      this.resource.entries.push(res);
+      this.pattern.entries.push(res);
     });
+    */
   }
 
   addDetailEntryClicked() {
-    const dialogRef = this.dialog.open(AddDetailEntryComponent, { data: this.resource.id });
+    /*
+    const dialogRef = this.dialog.open(AddDetailEntryComponent, { data: this.pattern.id });
     dialogRef.afterClosed().subscribe(res => {
-      this.resource.detailEntries.push(res);
+      this.pattern.detailEntries.push(res);
     });
+    */
   }
 
 }

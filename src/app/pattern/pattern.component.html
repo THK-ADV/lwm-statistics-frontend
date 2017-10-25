@@ -1,0 +1,42 @@
+<mat-expansion-panel *ngIf="pattern">
+  <mat-expansion-panel-header>
+    <mat-panel-title style="width: 15%">
+      {{pattern.label}}
+    </mat-panel-title>
+    <mat-panel-description class="text-center" style="width: 55%">
+
+      <div class="col-lg-2 text-left" mat-line>
+        <strong>Method:</strong><br> {{pattern.method}}
+      </div>
+      <div class="text-left" mat-line>
+        <strong>Pattern:</strong><br>
+        <span *ngFor="let path of getPatternArray()">
+          <span *ngIf="isVariable(path)" class="label" [style.background]="getColor()">{{path}}</span>
+          <span *ngIf="!isVariable(path)">{{path}}</span>
+          /
+        </span>
+
+      </div>
+
+    </mat-panel-description>
+    <div  class="text-right" style="width: 30%">
+
+      <button mat-icon-button (click)="$event.stopPropagation();" [routerLink]="['/pattern',pattern.id]">
+        <mat-icon>show_chart</mat-icon>
+      </button>
+      <button mat-icon-button (click)="$event.stopPropagation();">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="$event.stopPropagation(); onDeleteClicked()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </div>
+  </mat-expansion-panel-header>
+
+  <app-variables-list [variables]="variables"></app-variables-list>
+
+</mat-expansion-panel>
+<!--
+  <app-variables-list [variables]="variables"></app-variables-list>
+  -->

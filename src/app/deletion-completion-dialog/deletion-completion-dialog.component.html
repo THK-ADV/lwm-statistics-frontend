@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Neuer Resource Eintrag</h2>
+<div class="clearfix"></div>
+
+<mat-dialog-content>
+  <p>
+    Willst du {{data}} wirklich mit all seinen Resourcen löschen? Diese Aktion kann nicht mehr rückgängig gemacht werden.
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="submit(false)">Cancel</button>
+  <button mat-button (click)="submit(true)">Confirm</button>
+</mat-dialog-actions>

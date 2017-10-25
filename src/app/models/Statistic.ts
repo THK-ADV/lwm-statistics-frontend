@@ -7,8 +7,8 @@ export class Statistic {
     constructor(
         public method: string,
         public description: string,
-        public before: string,
-        public after: string,
+        public payload: string,
+        public username: string,
         public created: string,
         public id: number) {}
 }

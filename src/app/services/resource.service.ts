@@ -4,7 +4,8 @@ import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {Method, Resource} from '../models/Resource';
 import {ResourceEntry} from '../models/ResourceEntry';
-import {backendRoutes} from '../backend.routes';
+import {backendHost, backendRoutes} from '../backend.routes';
+import {Pattern} from "../models/Pattern";
 
 
 /**
@@ -17,12 +18,12 @@ export class ResourceService extends AbstractService {
         super(http);
     }
 
-    all(): Observable<Resource[]> {
-        return this.get<Resource[]>(backendRoutes.resources.all);
+    all(): Observable<Pattern[]> {
+        return this.get<Pattern[]>('/pattern');
     }
 
-    byId(id: number): Observable<Resource> {
-        return this.get<Resource>(backendRoutes.resources.byId + '/' + id);
+    byId(id: number): Observable<Pattern> {
+        return this.get<Pattern>('/pattern/' + id);
     }
 
     save(label, method, filter, detail): Observable<Resource> {

@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Neue Resource</h2>
+<div class="clearfix"></div>
+
+<form [formGroup]="resourceEntryForm" #resForm (submit)="submit()">
+  <mat-form-field>
+    <input formControlName="name" matInput required placeholder="Name">
+    <mat-hint>Name des Resource (Name der Resource aus der LWM-Datenbank)</mat-hint>
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="uuid" matInput required placeholder="UUID">
+    <mat-hint>UUID der Resource (UUID der Resource aus der LWM-Datenbank)</mat-hint>
+  </mat-form-field>
+  <div mat-dialog-actions style="margin-top: 32px">
+    <button type="submit" mat-raised-button color="accent" [disabled]="!resForm.checkValidity()"><i class="fa fa-save"></i> Speichern</button>
+  </div>
+</form>

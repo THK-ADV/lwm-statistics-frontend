@@ -1,0 +1,4 @@
+
+<div mat-line *ngFor="let variable of variables; let i = index">
+  <app-variable [variable]="variable" style="width: 100%" [color]="getColor(i)"></app-variable>
+</div>

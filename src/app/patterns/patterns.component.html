@@ -1,0 +1,8 @@
+<div class="container">
+    <button mat-fab style="position: fixed; right: 32px; bottom: 32px" (click)="addPatternClicked()"><i class="fa fa-plus"></i></button>
+    <h2>Pattern</h2>
+    <div class="clearfix"></div>
+    <div *ngFor="let pattern of patterns" style="padding: 8px">
+        <app-pattern [pattern]="pattern" (afterDelete)="onDeleteClicked($event)"></app-pattern>
+    </div>
+</div>

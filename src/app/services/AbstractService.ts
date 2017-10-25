@@ -12,7 +12,7 @@ export class AbstractService {
     constructor(protected http: Http) {}
 
     private handleError (error: Response) {
-        return Observable.throw(error.text());
+        return Observable.throw(error);
     }
 
     private extractData(res: Response) {
@@ -45,7 +45,7 @@ export class AbstractService {
             .catch(error => this.handleError(error));
     }
 
-    protected delete<T>(route: string, body: any = {}): Observable<T> {
+    protected deleteRequest<T>(route: string, body: any = {}): Observable<T> {
         return this.http.delete(
             backendHost + route,
             {

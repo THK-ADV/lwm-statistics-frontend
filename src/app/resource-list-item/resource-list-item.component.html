@@ -1,24 +1,21 @@
-<mat-expansion-panel *ngIf="resource">
+<mat-expansion-panel *ngIf="pattern">
   <mat-expansion-panel-header>
     <mat-panel-title style="width: 15%">
-      {{resource.label}}
+      {{pattern.label}}
     </mat-panel-title>
     <mat-panel-description class="text-center" style="width: 55%">
-      <!--<div class="col-lg-4 text-left" mat-line>
-          <span style="font-size: smaller">{{resource.id}}</span>
-      </div>-->
+
       <div class="col-lg-2 text-left" mat-line>
-        <strong>Method:</strong><br> {{resource.method}}
+        <strong>Method:</strong><br> {{pattern.method}}
       </div>
       <div class="col-lg-3 text-left" mat-line>
-        <strong>Filter:</strong><br> {{resource.filter}}
+        <strong>Pattern:</strong><br> {{pattern.pattern}}
       </div>
-      <div class="col-lg-3 text-left" mat-line>
-        <strong>Detail:</strong><br> {{resource.detail}}
-      </div>
+
     </mat-panel-description>
     <div class="text-right" style="width: 30%">
-      <button mat-icon-button (click)="$event.stopPropagation();" [routerLink]="['/resource',resource.id]">
+
+      <button mat-icon-button (click)="$event.stopPropagation();" [routerLink]="['/resource',pattern.id]">
         <mat-icon>show_chart</mat-icon>
       </button>
       <button mat-icon-button (click)="$event.stopPropagation();">
@@ -27,32 +24,16 @@
       <button mat-icon-button (click)="$event.stopPropagation();">
         <mat-icon>delete</mat-icon>
       </button>
+
     </div>
   </mat-expansion-panel-header>
-
-  <mat-selection-list>
-    <strong>Resource Entries</strong>
-    <button mat-icon-button (click)="addResourceEntryClicked()"><i class="fa fa-plus"></i></button>
-    <mat-list-item mat-line *ngFor="let resourceEntry of resource.entries">
-      <h3 mat-line> {{resourceEntry.label}} </h3>
-      <p mat-line>
-        <span> {{resourceEntry.entryId}} </span>
-      </p>
-      <span class="spacer"></span>
-
-      <button mat-icon-button (click)="$event.stopPropagation();">
-        <mat-icon class="mat-24">edit</mat-icon>
-      </button>
-      <button mat-icon-button (click)="$event.stopPropagation();">
-        <mat-icon class="mat-24">delete</mat-icon>
-      </button>
-    </mat-list-item>
-  </mat-selection-list>
+  <app-variables-list [variables]="variables"></app-variables-list>
+<!--
 
   <mat-list>
     <strong>Detail Entries</strong>
     <button mat-icon-button (click)="addDetailEntryClicked()"><i class="fa fa-plus"></i></button>
-    <mat-list-item mat-line *ngFor="let detailEntry of resource.detailEntries">
+    <mat-list-item mat-line *ngFor="let detailEntry of pattern.detailEntries">
       <h3 mat-line> {{detailEntry.label}} </h3>
       <p mat-line>
         <span> {{detailEntry.entryId}} </span>
@@ -66,5 +47,5 @@
       </button>
     </mat-list-item>
   </mat-list>
-
+-->
 </mat-expansion-panel>

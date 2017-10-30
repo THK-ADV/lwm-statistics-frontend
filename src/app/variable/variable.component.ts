@@ -3,7 +3,7 @@ import {Variable} from '../models/Variable';
 import {Value} from '../models/Value';
 import {ValueService} from '../services/value.service';
 import {MatDialog} from '@angular/material';
-import {AddValueDialogComponent} from '../add-resource-entry/add-value-dialog.component';
+import {AddValueDialogComponent} from '../add-value-dialog/add-value-dialog.component';
 
 @Component({
   selector: 'app-variable',

@@ -24,9 +24,11 @@
       <button mat-icon-button (click)="$event.stopPropagation();" [routerLink]="['/pattern',pattern.id]">
         <mat-icon>show_chart</mat-icon>
       </button>
+      <!--
       <button mat-icon-button (click)="$event.stopPropagation();">
         <mat-icon>edit</mat-icon>
       </button>
+      -->
       <button mat-icon-button (click)="$event.stopPropagation(); onDeleteClicked()">
         <mat-icon>delete</mat-icon>
       </button>

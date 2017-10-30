@@ -1,0 +1,9 @@
+<h2 class="theme-header">Pattern</h2>
+
+
+<app-large-dashboard-card *ngFor="let pattern of patterns"
+                          class="col-lg-4"
+                          [pattern]="pattern"
+                          [routerLink]="['/pattern', pattern.id]"
+></app-large-dashboard-card>
+

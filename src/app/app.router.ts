@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'pattern/:id', component: PatternDetailComponent},
-    {path: 'resources', component: PatternsComponent}
+    {path: 'pattern', component: PatternsComponent}
 ];
 
 export const router: ModuleWithProviders = RouterModule.forRoot(routes, {

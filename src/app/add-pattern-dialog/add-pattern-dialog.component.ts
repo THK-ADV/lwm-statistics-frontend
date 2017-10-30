@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ResourceService} from '../services/resource.service';
 import {PatternService} from '../services/pattern.service';
 
 
@@ -27,7 +26,7 @@ export class AddPatternDialogComponent implements OnInit {
     });
 
     constructor(private patternService: PatternService,
-                public dialogRef: MatDialogRef<AddPatternDialogComponent>, private resourceService: ResourceService) {
+                public dialogRef: MatDialogRef<AddPatternDialogComponent>) {
     }
 
     ngOnInit() {

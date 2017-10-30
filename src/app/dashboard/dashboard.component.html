@@ -1,17 +1,11 @@
 <div class="container">
-  <h1>Dashboard</h1>
+  <h1 class="theme-header">Dashboard</h1>
 
-  <mat-card *ngIf="statistics" class="col-lg-6" [style.backgroundColor]="'#FF5722'">
-    <mat-card-header>
-      <mat-card-title>
-        Aktionen
-      </mat-card-title>
-      <mat-card-subtitle>
-        Alle getätigte Aktionen
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <h1>{{statistics.length}}</h1>
-    </mat-card-content>
-  </mat-card>
+  <div class="row">
+    <app-global-dashboard-cards></app-global-dashboard-cards>
+  </div>
+  <hr>
+  <div class="row">
+    <app-pattern-dashboard-cards></app-pattern-dashboard-cards>
+  </div>
 </div>

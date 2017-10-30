@@ -1,0 +1,19 @@
+
+<mat-card class="small-dashboard-card">
+  <div class="image" [style.background-image]="image"></div>
+  <mat-card-header class="header">
+    <mat-card-subtitle>{{title}}</mat-card-subtitle>
+    <mat-card-title style="margin-left: 32px;" [style.font-size]="valueFontSize">{{value}}</mat-card-title>
+  </mat-card-header>
+
+
+
+  <hr class="content-divider">
+  <mat-card-content class="centered-inline-container">
+
+      <mat-icon class="centered-inline icon" [style.color]="matIconColor">{{matIcon}}</mat-icon>
+      <span class="centered-inline space-right" [style.color]="leftInfoColor">{{leftInfo}}</span>
+      <span class="centered-inline" [style.color]="rightInfoColor">{{rightInfo}}</span>
+  </mat-card-content>
+</mat-card>
+

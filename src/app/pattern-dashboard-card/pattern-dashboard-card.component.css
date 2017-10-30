@@ -1,0 +1,45 @@
+.small-dashboard-card{
+    margin: 24px 4px 4px;
+}
+
+.small-dashboard-card > .image {
+    display: inline-block;
+    margin-top: -40px;
+    margin-left: -40px;
+    margin-right: -40px;
+    width: 100%;
+    height: 100px;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.small-dashboard-card > .header {
+    display: inline-block;
+}
+
+.small-dashboard-card > .content-divider {
+    margin-top: 0;
+}
+
+.small-dashboard-card > mat-card-content > .icon {
+    font-size: 12pt;
+    color: #ddd;
+}
+
+.small-dashboard-card > mat-card-content > .info {
+    color: #ccc;
+}
+
+.centered-inline{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.centered-inline-container{
+    display: table;
+}
+
+.space-right{
+    padding-right: 4px;
+}

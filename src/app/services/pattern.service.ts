@@ -20,4 +20,12 @@ export class PatternService extends AbstractService {
     save(label, method, pattern): Observable<Pattern> {
         return this.post<Pattern>('/pattern', {label: label, pattern: pattern, method: method});
     }
+
+    all(): Observable<Pattern[]> {
+        return this.get<Pattern[]>('/pattern');
+    }
+
+    byId(id: number): Observable<Pattern> {
+        return this.get<Pattern>('/pattern/' + id);
+    }
 }

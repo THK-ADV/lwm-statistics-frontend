@@ -4,8 +4,7 @@ import {Statistic} from '../models/Statistic';
 import {AbstractService} from './AbstractService';
 import {Http} from '@angular/http';
 import {backendHost, backendRoutes} from '../backend.routes';
-import {ResourceValue} from '../models/ResourceValue';
-import {DataSetPack} from "../models/DataSetPack";
+import {DataSetPack} from '../models/DataSetPack';
 
 /**
  * Created by Florian on 28.08.2017.
@@ -21,13 +20,6 @@ export class StatisticService extends AbstractService {
 
     all(): Observable<Statistic[]> {
         return this.get<Statistic[]>(backendRoutes.statistics.all);
-    }
-
-    byResource(resId: string, start: Date, end: Date) {
-        console.log(start.getTime());
-        console.log(end.getTime());
-        return this.get<ResourceValue[]>(backendRoutes.statistics.byResource + '/' + resId + '/' + start.getTime() + '/' + end.getTime());
-
     }
 
     byPattern(patternId: number, start: Date, end: Date, view: string): Observable<DataSetPack[]> {

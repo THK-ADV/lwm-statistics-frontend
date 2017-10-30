@@ -48,33 +48,8 @@
             </div>
 
             <app-chart-table [dataSetPack]="data[i]"></app-chart-table>
-
-
-            <div style="overflow-x: auto">
-
-
-
-
-                <!--
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th class="col-sm-1"></th>
-                        <th class="col-sm-1" class="col-md-1" *ngFor="let label of lineChartLabels">
-                            <div><span>{{label}}</span></div>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let d of lineChartDataArray[i]">
-                        <th class="col-sm-1">{{d.label}}</th>
-                        <td class="col-sm-1" *ngFor="let d of d.data">{{d}}</td>
-                    </tr>
-                    </tbody>
-                </table>-->
-            </div>
+            <app-chart-element-detail style="padding-top: 32px" *ngIf="clickedDateValue" [dateValue]="clickedDateValue"></app-chart-element-detail>
         </mat-tab>
     </mat-tab-group>
-    <app-chart-element-detail *ngIf="clickedDateValue" [dateValue]="clickedDateValue"></app-chart-element-detail>
 
 </div>

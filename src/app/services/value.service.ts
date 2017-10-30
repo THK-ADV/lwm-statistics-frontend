@@ -2,12 +2,7 @@ import {Injectable} from '@angular/core';
 import {AbstractService} from './AbstractService';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {Method, Resource} from '../models/Resource';
-import {ResourceEntry} from '../models/ResourceEntry';
-import {backendHost, backendRoutes} from '../backend.routes';
-import {Pattern} from "../models/Pattern";
-import {Variable} from "../models/Variable";
-import {Value} from "../models/Value";
+import {Value} from '../models/Value';
 
 
 /**

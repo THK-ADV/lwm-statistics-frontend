@@ -1,11 +1,11 @@
 import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ResourceService} from '../services/resource.service';
 import {StatisticService} from '../services/statistic.service';
 import {BaseChartDirective} from 'ng2-charts';
 import {Pattern} from '../models/Pattern';
 import * as moment from 'moment';
 import {DataSetPack, DateValue} from '../models/DataSetPack';
+import {PatternService} from '../services/pattern.service';
 
 @Component({
     selector: 'app-ressource-detail',
@@ -53,8 +53,9 @@ export class PatternDetailComponent implements OnInit {
     // events
     chartClicked(e: any): void {
 
+        this.clickedDateValue = null;
         const active: any = e.active;
-        if (active && active.length) {
+        if (active && active.length >= 1) {
 
             const clicked = active[0];
 
@@ -72,14 +73,14 @@ export class PatternDetailComponent implements OnInit {
         this.lineChartType = chartType;
     }
 
-    constructor(private route: ActivatedRoute, private resourceService: ResourceService,
+    constructor(private route: ActivatedRoute, private patternService: PatternService,
                 private statisticsService: StatisticService) {
     }
 
     ngOnInit() {
 
         this.route.params
-            .switchMap(params => this.resourceService.byId(+params['id']))
+            .switchMap(params => this.patternService.byId(+params['id']))
             .subscribe(pattern => {
                 this.pattern = pattern;
                 this.prepareValues();

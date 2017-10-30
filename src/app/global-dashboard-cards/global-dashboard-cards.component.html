@@ -1,0 +1,60 @@
+<h2 class="theme-header">Global</h2>
+
+
+<app-small-dashboard-card
+        *ngIf="isStatisticsLoaded()"
+        class="col-lg-4"
+        image="url(../../assets/header_bg.png)"
+        title="Statistiken"
+        [value]="getCountOfAllStatistics()"
+        matIcon="schedule"
+        leftInfo="Gesamt"
+></app-small-dashboard-card>
+
+<app-small-dashboard-card
+        *ngIf="isStatisticsLoaded()"
+        class="col-lg-4"
+        image="url(../../assets/header_bg.png)"
+        title="Statistiken"
+        [value]="getCountOfLastMonthStatistics()"
+        [matIcon]="getMonthCountDifferenceBetweenLastAndBeforeInPercent() < 0 ? 'trending_down' : 'trending_up'"
+        [matIconColor]="getMonthCountDifferenceBetweenLastAndBeforeInPercent() < 0 ? '#EF5350' : '#66BB6A'"
+        [leftInfoColor]="getMonthCountDifferenceBetweenLastAndBeforeInPercent() < 0 ? '#EF5350' : '#66BB6A'"
+        [leftInfo]="getMonthCountDifferenceBetweenLastAndBeforeInPercent().toFixed(2) + '%'"
+        [rightInfo]="getLastMonth() | amDateFormat: 'MMMM YYYY'"
+></app-small-dashboard-card>
+
+<app-small-dashboard-card
+        *ngIf="isStatisticsLoaded()"
+        class="col-lg-4"
+        image="url(../../assets/header_bg.png)"
+        title="Statistiken"
+        [value]="getCountOfThisMonthStatistics()"
+        [matIcon]="getMonthCountDifferenceBetweenThisAndBeforeInPercent() < 0 ? 'trending_down' : 'trending_up'"
+        [matIconColor]="getMonthCountDifferenceBetweenThisAndBeforeInPercent() < 0 ? '#EF5350' : '#66BB6A'"
+        [leftInfoColor]="getMonthCountDifferenceBetweenThisAndBeforeInPercent() < 0 ? '#EF5350' : '#66BB6A'"
+        [leftInfo]="getMonthCountDifferenceBetweenThisAndBeforeInPercent().toFixed(2) + '%'"
+        [rightInfo]="getCurrentMonth() | amDateFormat: 'MMMM YYYY'"
+></app-small-dashboard-card>
+
+<app-small-dashboard-card
+        *ngIf="isStatisticsLoaded()"
+        class="col-lg-8"
+        image="url(../../assets/header_bg.png)"
+        title="Aktivste Route"
+        [value]="getMostActiveRoute()"
+        matIcon="library_books"
+        [leftInfo]="getMostActiveRouteCount()"
+        valueFontSize="14pt"
+></app-small-dashboard-card>
+
+<app-small-dashboard-card
+        *ngIf="isStatisticsLoaded()"
+        class="col-lg-4"
+        image="url(../../assets/header_bg.png)"
+        title="Aktivster Nutzer"
+        [value]="getMostActiveUserName()"
+        matIcon="library_books"
+        [leftInfo]="getMostActiveUserStatisticCount()"
+        valueFontSize="14pt"
+></app-small-dashboard-card>

@@ -1,30 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import {Resource} from '../models/Resource';
-import {ResourceService} from '../services/resource.service';
-import {MatDialog, MatDialogRef} from '@angular/material';
-import {AddPatternDialogComponent} from '../add-resource/add-pattern-dialog.component';
-import {AddValueDialogComponent} from '../add-resource-entry/add-value-dialog.component';
-import {AddDetailEntryComponent} from '../add-detail-entry/add-detail-entry.component';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {AddPatternDialogComponent} from '../add-pattern-dialog/add-pattern-dialog.component';
 import {Pattern} from '../models/Pattern';
 import {PatternService} from '../services/pattern.service';
-import {DeletionCompletionDialogComponent} from '../deletion-completion-dialog/deletion-completion-dialog.component';
 
 @Component({
-  selector: 'app-resources',
-  templateUrl: './patterns.component.html',
-  styleUrls: ['./patterns.component.css']
+    selector: 'app-resources',
+    templateUrl: './patterns.component.html',
+    styleUrls: ['./patterns.component.css']
 })
 export class PatternsComponent implements OnInit {
 
     patterns: Pattern[];
 
-  constructor(private resourceService: ResourceService, private dialog: MatDialog, private patternService: PatternService) { }
+    constructor(private patternService: PatternService, private dialog: MatDialog) {
+    }
 
-  ngOnInit() {
-    this.resourceService.all().subscribe(patterns => {
-        this.patterns = patterns;
-    });
-  }
+    ngOnInit() {
+        this.patternService.all().subscribe(patterns => {
+            this.patterns = patterns;
+        });
+    }
 
     addPatternClicked() {
 

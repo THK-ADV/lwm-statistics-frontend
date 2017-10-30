@@ -3,20 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavComponent } from './nav/nav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {router} from './app.router';
 import {StatisticService} from './services/statistic.service';
 import {HttpModule} from '@angular/http';
-import {NavService} from './services/nav.service';
-import {ResourceService} from './services/resource.service';
 import { PatternDetailComponent } from './pattern-detail/pattern-detail.component';
 import {ChartsModule} from 'ng2-charts';
-import { AddPatternDialogComponent } from './add-resource/add-pattern-dialog.component';
+import { AddPatternDialogComponent } from './add-pattern-dialog/add-pattern-dialog.component';
 import { PatternsComponent } from './patterns/patterns.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { AddValueDialogComponent } from './add-resource-entry/add-value-dialog.component';
-import { AddDetailEntryComponent } from './add-detail-entry/add-detail-entry.component';
+import { AddValueDialogComponent } from './add-value-dialog/add-value-dialog.component';
 import { ResourceListItemComponent } from './resource-list-item/resource-list-item.component';
 import {
     MatButtonModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatDatepickerModule, MatDialogModule,
@@ -27,7 +24,7 @@ import {
     MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatSelectModule,
     MatSidenavModule,
     MatSliderModule, MatSlideToggleModule, MatSortModule,
-    MatTableModule, MatTabsModule
+    MatTableModule, MatTabsModule, MatToolbar, MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {VariableService} from './services/variable.service';
 import { VariablesListComponent } from './variables-list/variables-list.component';
@@ -40,17 +37,20 @@ import { DeletionCompletionDialogComponent } from './deletion-completion-dialog/
 import {MomentModule} from 'angular2-moment';
 import { ChartElementDetailComponent } from './chart-element-detail/chart-element-detail.component';
 import { ChartTableComponent } from './chart-table/chart-table.component';
+import { GlobalDashboardCardsComponent } from './global-dashboard-cards/global-dashboard-cards.component';
+import { PatternDashboardCardsComponent } from './pattern-dashboard-cards/pattern-dashboard-cards.component';
+import { SmallDashboardCardComponent } from './small-dashboard-card/small-dashboard-card.component';
+import { PatternDashboardCardComponent } from './pattern-dashboard-card/pattern-dashboard-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavComponent,
+    ToolbarComponent,
     PatternDetailComponent,
     AddPatternDialogComponent,
     PatternsComponent,
     AddValueDialogComponent,
-    AddDetailEntryComponent,
     ResourceListItemComponent,
     VariablesListComponent,
     ValuesComponent,
@@ -59,6 +59,10 @@ import { ChartTableComponent } from './chart-table/chart-table.component';
     DeletionCompletionDialogComponent,
     ChartElementDetailComponent,
     ChartTableComponent,
+    GlobalDashboardCardsComponent,
+    PatternDashboardCardsComponent,
+    SmallDashboardCardComponent,
+    PatternDashboardCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,12 +93,12 @@ import { ChartTableComponent } from './chart-table/chart-table.component';
       MomentModule,
       MatPaginatorModule,
       MatTableModule,
-      MatSortModule
+      MatSortModule,
+      MatTooltipModule,
+      MatToolbarModule
   ],
   providers: [
       StatisticService,
-      NavService,
-      ResourceService,
       VariableService,
       ValueService,
       PatternService
@@ -102,7 +106,6 @@ import { ChartTableComponent } from './chart-table/chart-table.component';
   entryComponents: [
       AddPatternDialogComponent,
       AddValueDialogComponent,
-      AddDetailEntryComponent,
       DeletionCompletionDialogComponent
   ],
   bootstrap: [AppComponent]
